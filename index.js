@@ -1,15 +1,15 @@
-console.log("Discord.js Framework");
-console.log("By Richard Condra");
+console.log("+----------------------+\n| Discord.js Framework |\n|                      |\n|    Version a0.0.1    |\n+----------------------+\n\n+----------------------+\n|    Head Developers   |\n+----------------------+\n|    Richard Condra    |\n|                      |\n+----------------------+\n\n+----------------------+\n|      Developers      |\n+----------------------+\n|     Johan Boshoff    |\n|     Evan Cavalier    |\n|    Taylor Sorrells   |\n|                      |\n+----------------------+");
 
 
 
 /* Loading "Node Modules" */
 console.log("\nLoading Node Modules...");
 
-let modules = {};
+let modules = require("./cache/modules.js");
 let moduleNames = {
 	"bettersqlitepool":"better-sqlite-pool",
 	"Discord":"discord.js",
+	"electron":"electron",
 	"enmap":"enmap",
 	"express":"express",
 	"fs":"fs"
@@ -21,26 +21,16 @@ for (let i of Object.keys(moduleNames)) {
 console.log("Node Modules have been loaded.");
 
 
-/* Loading "cache" files */
-console.log("\nLoading cache files...")
+/* Loading "bin" Modules */
+console.log("\nLoading bin files...")
 
-let cache = {};
-let cachefiles = modules.fs.readdirSync("./cache/");
-for (let i of cachefiles) {
-	cache[i] = loadFile("./cache/"+i);
+let binFiles = modules.fs.readdirSync("./bin/");
+
+for (let i of binFiles) {
+	loadFile("./bin/"+i+"/init.js");
 }
-console.log("cache Files have been loaded.");
 
-
-/* Loading "cfg" files */
-console.log("\nLoading cfg files...");
-
-let cfg = {};
-let cfgfiles = modules.fs.readdirSync("./cfg/");
-for (let i of cfgfiles) {
-	cfg[i] = getData("./cfg/"+i);
-}
-console.log("cfg files Have been loaded.");
+console.log("bin files have been loaded.")
 
 
 /* Makes a request to require a file/module */

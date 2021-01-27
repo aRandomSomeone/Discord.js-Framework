@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Monitor Activity</title>
+
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <link type="text/css" rel="stylesheet" href="monitors.css" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="../../socket.io/socket.io.js"></script>
+    <script src="./socket.js"></script>
+    <script src="monitors.js"></script>
+
+</head>
+
+<body>
+	<div id="monitors">
+	    <div class="monitor-parent" id="users">
+	        <p class="title">Users</p>
+	        <div class="monitor">
+	            <h3 class="value">0</h3>
+	            <p class="percent">0</p>
+	            <svg class="bar">
+	                <circle class="background" cx="75" cy="75" r="59"></circle>
+	                <circle class="percent" cx="75" cy="75" r="59"></circle>
+	            </svg>
+	        </div>
+	        <button onclick="createModal(this.parentElement.id)">View detailed info</button>
+	    </div>
+	    <div class="monitor-parent" id="guilds">
+	        <p class="title">Guilds</p>
+	        <div class="monitor">
+	            <h3 class="value">0</h3>
+	            <p class="percent">0</p>
+	            <svg class="bar">
+	                <circle class="background" cx="75" cy="75" r="59"></circle>
+	                <circle class="percent" cx="75" cy="75" r="59"></circle>
+	            </svg>
+	        </div>
+	        <button onclick="createModal(this.parentElement.id)">View detailed info</button>
+	    </div>
+	    <div class="monitor-parent" id="ping">
+	        <p class="title">Ping</p>
+	        <div class="monitor">
+	            <h3 class="value">0</h3>
+	            <p class="percent">0</p>
+	            <svg class="bar">
+	                <circle class="background" cx="75" cy="75" r="59"></circle>
+	                <circle class="percent" cx="75" cy="75" r="59"></circle>
+	            </svg>
+	        </div>
+	        <button onclick="createModal(this.parentElement.id)">View detailed info</button>
+	    </div>
+	    <div class="monitor-parent" id="system-memory">
+	        <p class="title">Memory Usage</p>
+	        <div class="monitor">
+	            <h3 class="value">0</h3>
+	            <p class="percent">0</p>
+	            <svg class="bar">
+	                <circle class="background" cx="75" cy="75" r="59"></circle>
+	                <circle class="percent" cx="75" cy="75" r="59"></circle>
+	            </svg>
+	        </div>
+	        <button onclick="createModal(this.parentElement.id)">View detailed info</button>
+	    </div>
+	    <div class="monitor-parent" id="system-uptime">
+	        <p class="title">Uptime</p>
+	        <div class="monitor">
+	            <h3 class="value">0</h3>
+	            <p class="percent">0</p>
+	            <svg class="bar">
+	                <circle class="background" cx="75" cy="75" r="59"></circle>
+	                <circle class="percent" cx="75" cy="75" r="59"></circle>
+	            </svg>
+	        </div>
+	        <button onclick="createModal(this.parentElement.id)">View detailed info</button>
+	    </div>
+	</div>
+
+	<div id="console">
+		<ul></ul>
+	</div>
+
+
+    <template id="monitor-temp">
+        <div class="monitor-parent" id="">
+            <p class="title"></p>
+            <div class="monitor">
+                <h3 class="value"></h3>
+                <p class="percent"></p>
+                <svg class="bar">
+                    <circle class="background" cx="75" cy="75" r="59"></circle>
+                    <circle class="percent" cx="75" cy="75" r="59"></circle>
+                </svg>
+            </div>
+            <button onclick="createModal(this.parentElement.id)">View detailed info</button>
+        </div>
+    </template>
+</body>
+
+</html>

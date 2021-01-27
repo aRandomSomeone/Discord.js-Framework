@@ -1,0 +1,149 @@
+#monitors {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.monitor-parent {
+	margin: 2px 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    min-width: 150px;
+    min-height: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #2c2c2c;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.monitor-parent > .title {
+    font-size: 20px;
+    display: block;
+    width: inherit;
+    text-align: center;
+    margin: 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.monitor-parent > .monitor {
+    display: block;
+    width: 150px;
+    height: 150px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.monitor-parent > .monitor > .value {
+    position: absolute;
+    margin: 0;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    line-height: 150px;
+    font-size: 25px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.monitor-parent > .monitor > .percent {
+    position: absolute;
+    margin: 0;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    line-height: 250px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.monitor-parent > .monitor > .bar {
+    position: absolute;
+    margin: 0;
+    width: 150px;
+    height: 150px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.monitor-parent > .monitor > .bar > circle {
+    position: absolute;
+    margin: 0;
+    fill: none;
+    stroke-width: 12.5px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.monitor-parent > .monitor > .bar > .background {
+    stroke: #3c3c3c;
+    stroke-dasharray: 1000%;
+    stroke-dashoffset: 814.75%;
+    transform: rotate(135deg) translate(-71px, -185px);
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.monitor-parent > .monitor > .bar > .percent {
+    stroke: #a00;
+    stroke-dasharray: 1000%;
+    stroke-dashoffset: 1000%; /*calc(1000% - (185.25% * (var(--value) / var(--max))));*/
+    transform: rotate(135deg) translate(-71px, -185px);
+    user-select: none;
+    -webkit-user-select: none;
+    
+    transition: stroke-dashoffset 300ms ease;
+}
+
+.monitor-parent > button {
+    width: 150px;
+    height: 25px;
+    border-radius: 10px;
+    appearance: none;
+    background-color: #3c3c3c;
+    border: none;
+    cursor: pointer;
+
+    transition: background-color 350ms ease;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.monitor-parent > button:hover {
+    background-color: #3f3f3f;
+    transition: background-color 250ms ease;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#console {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+#console ul {
+	margin: 0;
+	padding: 10px;
+	min-height: 200px;
+	max-height: 50vh;
+	background: #2a2a2a;
+	list-style-type: disc;
+}
+
+#console ul li {
+	list-style-type: disc;
+}

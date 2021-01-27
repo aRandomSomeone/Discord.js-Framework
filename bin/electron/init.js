@@ -1,6 +1,5 @@
-let modules = require("../../cache/modules.js");
-let cache = require("../../cache/resources.js");
+let resources = require("../../cache/resources.js");
 
-const electron = modules.electron;
-const fs = modules.fs;
+const electron = require("electron");
+const fs = require("fs");
 
